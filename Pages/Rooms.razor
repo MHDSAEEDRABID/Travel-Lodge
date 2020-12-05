@@ -2,18 +2,18 @@
 @using Microsoft.AspNetCore.Components.Web
 @using BlazorHotel.Models
 @using BlazorHotel.Services
-@inject HotelRoomService HotelService
 
 <div class="row">
-    @foreach (var room in HotelService.GetRooms())
+    @foreach (var room in hotelRoomService.GetRooms())
     {
-        <div class="card" @onclick="(e=> SelectProduct(room.id))">
+        <div class="card" @onclick="(e=> SelectRoom(room.id))">
             <div class="card-image" style="background-image: url('@room.img');">
             </div>
             <div class="card-text">
                 <span class="date">@DateTime.Now.ToString("MM-dd-yyyy")</span>
                 <h2>@room.title</h2>
                 <p>@room.description</p>
+                ub
             </div>
             <div class="card-stats">
                 <div class="stat">
@@ -33,8 +33,11 @@
     }
 </div>
 @code {
-    void SelectProduct(string roomid)
+    public HotelRoom room = new HotelRoom();
+    HotelRoomService hotelRoomService;
+    void SelectRoom(string roomid)
     {
-
+        IList<HotelRoom> rooms = hotelRoomService.GetRooms();
+        room = rooms.Where(x => x.id == roomid).FirstOrDefault();
     }
 }
