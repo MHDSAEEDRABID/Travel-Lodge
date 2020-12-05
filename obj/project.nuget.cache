@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "UTv7R3q1KI7dE1EYBG92nup7BFONJVrQgd1iUOhY0cUXvi28lWAMmwl2Ek5ViZ+tKRs+M4qFY3cpw6qZsefvkw==",
+  "success": true,
+  "projectFilePath": "D:\\AllProjects\\BlazorHotel\\BlazorHotel\\BlazorHotel.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\SAEED\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

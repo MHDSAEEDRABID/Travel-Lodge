@@ -1,0 +1,40 @@
+﻿@page "/rooms"
+@using Microsoft.AspNetCore.Components.Web
+@using BlazorHotel.Models
+@using BlazorHotel.Services
+@inject HotelRoomService HotelService
+
+<div class="row">
+    @foreach (var room in HotelService.GetRooms())
+    {
+        <div class="card" @onclick="(e=> SelectProduct(room.id))">
+            <div class="card-image" style="background-image: url('@room.img');">
+            </div>
+            <div class="card-text">
+                <span class="date">@DateTime.Now.ToString("MM-dd-yyyy")</span>
+                <h2>@room.title</h2>
+                <p>@room.description</p>
+            </div>
+            <div class="card-stats">
+                <div class="stat">
+                    <div class="value">4<sup>m</sup></div>
+                    <div class="type">read</div>
+                </div>
+                <div class="stat border">
+                    <div class="value">5123</div>
+                    <div class="type">views</div>
+                </div>
+                <div class="stat">
+                    <div class="value">32</div>
+                    <div class="type">comments</div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+@code {
+    void SelectProduct(string roomid)
+    {
+
+    }
+}
