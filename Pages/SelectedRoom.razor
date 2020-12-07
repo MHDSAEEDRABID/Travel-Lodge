@@ -1,5 +1,7 @@
-﻿<h3>SelectedRoom</h3>
+﻿@page "/rooms"
+@inject 
 
 @code {
-
+    [Parameter] public BlazorHotel.Models.HotelRoom SelectedHotelRoom { get; set; }
+    
 }

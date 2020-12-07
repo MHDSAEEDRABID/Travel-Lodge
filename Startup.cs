@@ -29,6 +29,7 @@ namespace BlazorHotel
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
+            services.AddTransient<DisplayRoomHotelService>();
             services.AddTransient<HotelRoomService>();
             services.AddSingleton<WeatherForecastService>();
         }
